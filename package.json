@@ -1,0 +1,20 @@
+{
+  "name": "serviceworker-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "neutrino build",
+    "start": "neutrino start",
+    "lint": "neutrino lint"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb-base": "^8.2.3",
+    "@neutrinojs/web": "^8.2.3",
+    "neutrino": "^8.2.3"
+  },
+  "dependencies": {
+    "aws-amplify": "^0.3.3",
+    "buffer": "^5.1.0"
+  }
+}
