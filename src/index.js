@@ -4,15 +4,26 @@ import awsConfig from './aws-exports';
 
 Amplify.configure(awsConfig);
 
-const serviceWorker = new ServiceWorker();
-serviceWorker.register();
+(async () => {
+  const serviceWorker = new ServiceWorker();
+  await serviceWorker.register();
 
-global.handleClick1 = () => {
-  console.log('Click 1');
+  const publicKey = 'BBPa8FQja9sOkmiaddE6nemjagLuvW9TTW7s9npKz_O_gtmBhGJv-AxGzOx9-aSHwyrv-T4V6ksJ8cw7HN4Ob7U';
+  const subscription = await serviceWorker.enablePush(publicKey);
+
+  console.log(subscription);
+})();
+
+global.handleClick1 = async () => {
+  const result = await fetch('static/a-file.txt');
+
+  console.log(await result.text());
 };
 
-global.handleClick2 = () => {
-  console.log('Click 2');
+global.handleClick2 = async () => {
+  const result = await fetch('static/another-file.txt');
+
+  console.log(await result.text());
 };
 
 const root = document.getElementById('root');

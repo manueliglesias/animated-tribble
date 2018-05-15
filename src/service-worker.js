@@ -19,6 +19,7 @@
 let appCacheFiles = [
     '/',
     '/index.html',
+    '/static/a-file.txt',
   ],
   // The name of the Cache Storage
   appCache = 'aws-amplify-v1';
